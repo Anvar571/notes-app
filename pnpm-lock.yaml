@@ -12,6 +12,7 @@ specifiers:
   express-session: ^1.17.3
   jsonwebtoken: ^9.0.0
   mongoose: ^6.9.2
+  nodemailer: ^6.9.1
   passport: ^0.6.0
 
 dependencies:
@@ -26,6 +27,7 @@ dependencies:
   express-session: 1.17.3
   jsonwebtoken: 9.0.0
   mongoose: 6.9.2
+  nodemailer: 6.9.1
   passport: 0.6.0
 
 packages:
@@ -1666,6 +1668,11 @@ packages:
         optional: true
     dependencies:
       whatwg-url: 5.0.0
+    dev: false
+
+  /nodemailer/6.9.1:
+    resolution: {integrity: sha512-qHw7dOiU5UKNnQpXktdgQ1d3OFgRAekuvbJLcdG5dnEo/GtcTHRYM7+UfJARdOFU9WUQO8OiIamgWPmiSFHYAA==}
+    engines: {node: '>=6.0.0'}
     dev: false
 
   /nopt/5.0.0:
