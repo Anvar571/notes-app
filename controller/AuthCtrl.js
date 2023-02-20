@@ -40,6 +40,7 @@ module.exports = class UserCtrl {
                 //     newUser
                 // }
             })
+            next();
         } catch (error) {
             res.status(504).json({message: error.message});
         }
@@ -76,6 +77,7 @@ module.exports = class UserCtrl {
                     checkUser,
                 }
             })
+            next();
 
         } catch (error) {
             res.status(504).json({message: error.message});
@@ -87,6 +89,8 @@ module.exports = class UserCtrl {
             res.clearCookie("refreshtoken", {
                 path: "/api/auth/refreshtoken"
             })
+            next();
+
         } catch (error) {
             return res.status(500).json({message: error.message})
         }
@@ -102,6 +106,8 @@ module.exports = class UserCtrl {
                     users
                 }
             });
+            next();
+
         } catch (error) {
             return res.status(500).json({message: error.message});
         }

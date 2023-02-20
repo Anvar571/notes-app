@@ -5,10 +5,21 @@ const CommentSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    reply: mongoose.Types.ObjectId,
-    user: {type: mongoose.Types.ObjectId},
-    postId: mongoose.Types.ObjectId,
-    postUserId: mongoose.Types.ObjectId
+    user: {
+        type: mongoose.Types.ObjectId,
+        ref: "users",
+        required: true
+    },
+    postId: {
+        type: mongoose.Types.ObjectId,
+        ref: "post",
+        required: true
+    },
+    postUserId: {
+        type: mongoose.Types.ObjectId,
+        ref: "users",
+        required: true
+    }
 }, {
     timestamps: true
 })

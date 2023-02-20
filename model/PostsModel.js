@@ -10,10 +10,14 @@ const PostScema = mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        maxLength: 200
+        minLength: 10
     },
-    comments: [{type: mongoose.Types.ObjectId, ref: "users"}],
-    user: {type: mongoose.Types.ObjectId, ref: "users"}
+    slug: {
+        type: String,
+        required: true
+    },
+    user: {type: mongoose.Types.ObjectId, required: true, ref: "users"},
+    comments: [{type: mongoose.Types.ObjectId, ref: "users"}]
 }, {timestamps: true})
 
-module.exports = mongoose.model("notes", PostScema);
+module.exports = mongoose.model("post", PostScema);
